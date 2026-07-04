@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danjuma Sani | My Profile</title>
+  <meta name="description" content="Portfolio of Danjuma Sani — full-stack developer building fast, elegant, futuristic web experiences." />
+  <meta name="theme-color" content="#070B1A" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect"  href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-core">
+      <svg class="loader-ring" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="42"></circle>
+      </svg>
+      <span class="loader-tag">SD</span>
+    </div>
+    <p class="loader-text">initializing<span class="loader-dots"></span></p>
+  </div>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ===================== SCROLL PROGRESS ===================== -->
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgress"></div></div>
+
+  <!-- ===================== BACKGROUND FX (fixed layer) ===================== -->
+  <div class="bg-fx" aria-hidden="true">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="particles"></canvas>
+  </div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">S<span class="logo-accent">D</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-nav">Let's Talk</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" class="mobile-link" data-section="home">Home</a>
+      <a href="#about" class="mobile-link" data-section="about">About</a>
+      <a href="#portfolio" class="mobile-link" data-section="portfolio">Portfolio</a>
+      <a href="#skills" class="mobile-link" data-section="skills">Skills</a>
+      <a href="#services" class="mobile-link" data-section="services">Services</a>
+      <a href="#contact" class="mobile-link" data-section="contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow reveal-fade">
+          <span class="status-dot"></span> Available for new projects
+        </p>
+
+        <h1 class="hero-title reveal-fade" style="--d:0.05s">
+          Hi, I'm <span class="gradient-text">Danjuma Sani</span>
+        </h1>
+
+        <h2 class="hero-subtitle reveal-fade" style="--d:0.15s">
+          I build <span id="typedText" class="typed-text"></span><span class="typed-cursor">|</span>
+        </h2>
+
+        <p class="hero-desc reveal-fade" style="--d:0.25s">
+          Full-stack developer crafting fast, immersive, and elegant digital products —
+          from pixel-perfect interfaces to resilient backend systems.
+        </p>
+
+        <div class="hero-actions reveal-fade" style="--d:0.35s">
+          <a href="#portfolio" class="btn btn-primary ripple">
+            <span>View Projects</span>
+          </a>
+          <a href="#contact" class="btn btn-ghost ripple">
+            <span>Contact Me</span>
+          </a>
+        </div>
+
+        <div class="hero-scroll-cue reveal-fade" style="--d:0.5s">
+          <span>Scroll</span>
+          <div class="scroll-cue-line"></div>
+        </div>
+      </div>
+
+      <div class="hero-glow-plane" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal-up">About Me</p>
+        <h2 class="section-title reveal-up">The person behind the code</h2>
+
+        <div class="about-grid">
+          <div class="about-visual reveal-up">
+            <div class="profile-ring">
+              <img
+                src="c:\Users\Let's Get Serious\Documents\New folder\New folder\file_00000000b3fc71f4a423a7acc072fc44.png"
+                alt="Portrait of Danjuma Sani"
+                class="profile-img"
+                loading="lazy"
+                width="320" height="320"
+              />
+              <div class="profile-glow"></div>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-num" data-target="5">0</span><span class="stat-suffix">+</span>
+                <p class="stat-label">Years Experience</p>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num" data-target="60">0</span><span class="stat-suffix">+</span>
+                <p class="stat-label">Projects Shipped</p>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num" data-target="30">0</span><span class="stat-suffix">+</span>
+                <p class="stat-label">Happy Clients</p>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num" data-target="99">0</span><span class="stat-suffix">%</span>
+                <p class="stat-label">Client Satisfaction</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <p class="about-text reveal-up">
+              I'm a full-stack developer with 5+ years of experience turning ambitious ideas into
+              production-grade software. I care about the details most people skip — the 60fps
+              animation, the accessible focus state, the API that fails gracefully at 3am.
+            </p>
+            <p class="about-text reveal-up">
+              My work spans modern frontend engineering, scalable backend architecture, and the
+              interface design that ties it together. I've partnered with startups and established
+              teams to launch products that feel as good as they perform.
+            </p>
+
+            <div class="skills-summary reveal-up">
+              <span class="mini-badge">JavaScript</span>
+              <span class="mini-badge">React</span>
+              <span class="mini-badge">Node.js</span>
+              <span class="mini-badge">Python</span>
+              <span class="mini-badge">MongoDB</span>
+              <span class="mini-badge">UI/UX</span>
+            </div>
+
+            <h3 class="timeline-heading reveal-up">Experience</h3>
+            <div class="timeline">
+              <div class="timeline-item reveal-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2023 — Present</span>
+                  <h4>Senior Full-Stack Engineer</h4>
+                  <p>Nebula Labs — Leading development of real-time SaaS platforms serving 200k+ users.</p>
+                </div>
+              </div>
+              <div class="timeline-item reveal-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2021 — 2023</span>
+                  <h4>Frontend Developer</h4>
+                  <p>Quantum Studio — Built immersive, animation-heavy marketing sites for global brands.</p>
+                </div>
+              </div>
+              <div class="timeline-item reveal-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2019 — 2021</span>
+                  <h4>Junior Web Developer</h4>
+                  <p>Pixel Forge — Shipped e-commerce and internal tooling for mid-market clients.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PORTFOLIO ===================== -->
+    <section id="portfolio" class="section">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal-up">Selected Work</p>
+        <h2 class="section-title reveal-up">Projects that shipped and shine</h2>
+
+        <div class="project-grid">
+
+          <article class="project-card tilt-card reveal-up">
+            <div class="project-thumb">
+              <img src="c:\Users\Let's Get Serious\Documents\New folder\New folder\Screenshot 2026-07-03 080447.png?w=600&h=400&fit=crop" alt="Nova Analytics dashboard interface" loading="lazy" width="600" height="400">
+              <div class="project-thumb-glow"></div>
+            </div>
+            <div class="project-body">
+              <h3>Learner's Help </h3>
+              <p>Real-time data visualization dashboard with live streaming charts and custom alerting.</p>
+              <div class="tech-badges">
+                <span>React</span><span>Node.js</span><span>WebSocket</span><span>D3.js</span>
+              </div>
+              <div class="project-links">
+                <a href="https://sani-sonic.github.io/The-Periodic-Table-by-Sani/" class="btn-icon" aria-label="View GitHub repository">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.15c-3.19.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                </a>
+                <a href="https://sani-sonic.github.io/The-Periodic-Table-by-Sani/" class="btn btn-sm btn-primary">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card reveal-up">
+            <div class="project-thumb">
+              <img src="c:\Users\Let's Get Serious\Documents\New folder\New folder\Screenshot 2026-07-03 083946.png?w=600&h=400&fit=crop" alt="Aether Commerce storefront design" loading="lazy" width="600" height="400">
+              <div class="project-thumb-glow"></div>
+            </div>
+            <div class="project-body">
+              <h3>For Your Love</h3>
+              <p>Express Love to your friend,Your Love,Family.</p>
+              <div class="tech-badges">
+                <span>Next.js</span><span>Stripe</span><span>Tailwind</span><span>MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="https://sani-sonic.github.io/For-My-Love/" class="btn-icon" aria-label="View GitHub repository">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.15c-3.19.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                </a>
+                <a href="https://sani-sonic.github.io/For-My-Love/" class="btn btn-sm btn-primary">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card reveal-up">
+            <div class="project-thumb">
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" alt="Pulse chat application interface" loading="lazy" width="600" height="400">
+              <div class="project-thumb-glow"></div>
+            </div>
+            <div class="project-body">
+              <h3>Coming Soon</h3>
+              <p>End-to-end encrypted messaging app with presence indicators and file sharing.</p>
+              <div class="tech-badges">
+                <span>React</span><span>Express</span><span>Socket.io</span><span>Redis</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-icon" aria-label="View GitHub repository">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.15c-3.19.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                </a>
+                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card reveal-up">
+            <div class="project-thumb">
+              <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop" alt="Orbit project management tool" loading="lazy" width="600" height="400">
+              <div class="project-thumb-glow"></div>
+            </div>
+            <div class="project-body">
+              <h3>Coming Soon </h3>
+              <p>Kanban-style project management tool with drag-and-drop boards and team analytics.</p>
+              <div class="tech-badges">
+                <span>Vue</span><span>Python</span><span>PostgreSQL</span><span>Docker</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-icon" aria-label="View GitHub repository">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.15c-3.19.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                </a>
+                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card reveal-up">
+            <div class="project-thumb">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=400&fit=crop" alt="Lumen finance mobile app" loading="lazy" width="600" height="400">
+              <div class="project-thumb-glow"></div>
+            </div>
+            <div class="project-body">
+              <h3>Coming Soon </h3>
+              <p>Personal finance mobile app with budgeting insights and predictive spend alerts.</p>
+              <div class="tech-badges">
+                <span>React Native</span><span>Node.js</span><span>MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-icon" aria-label="View GitHub repository">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.15c-3.19.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                </a>
+                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card reveal-up">
+            <div class="project-thumb">
+              <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=600&h=400&fit=crop" alt="Cipher API gateway platform" loading="lazy" width="600" height="400">
+              <div class="project-thumb-glow"></div>
+            </div>
+            <div class="project-body">
+              <h3>Coming Soon</h3>
+              <p>Developer-focused API gateway with rate limiting, analytics, and key management.</p>
+              <div class="tech-badges">
+                <span>Go</span><span>Python</span><span>Redis</span><span>AWS</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-icon" aria-label="View GitHub repository">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.15c-3.19.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                </a>
+                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal-up">Toolbox</p>
+        <h2 class="section-title reveal-up">Skills &amp; technologies</h2>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal-up" style="--float-delay:0s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 2l1.6 18L12 22l7.4-2L21 2H3z" fill="#E44D26"/><path d="M12 4v16.4L18 19l1.4-15.4H12z" fill="#F16529"/><path d="M12 9H8.6l.2 3H12v3l-3-1-.2-2H6.6l.4 5 5 1.4V16H12z" fill="#EBEBEB"/></svg>
+            </div>
+            <h3>HTML5</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="95"></div></div>
+            <span class="skill-pct">95%</span>
+          </div>
+
+             <div class="skill-card reveal-up" style="--float-delay:0.4s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 2l1.6 18L12 22l7.4-2L21 2H3z" fill="#264DE4"/><path d="M12 4v16.4L18 19l1.4-15.4H12z" fill="#2965F1"/><path d="M12 9H7.9l.2 3H12v-3zm0 6.9l-2.5-.7-.2-2H6.9l.3 4 4.7 1.3v-2.6z" fill="#EBEBEB"/></svg>
+            </div>
+            <h3>CSS3</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="92"></div></div>
+            <span class="skill-pct">92%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:0.8s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" fill="#F7DF1E"/><path d="M6.3 19.8l1.9-1.1c.4.7.7 1.2 1.5 1.2.8 0 1.3-.3 1.3-1.5v-8h2.3v8c0 2.3-1.3 3.4-3.3 3.4-1.8 0-2.8-.9-3.3-2zM14.8 19.5l1.9-1.1c.5.8 1.1 1.4 2.3 1.4 1 0 1.6-.5 1.6-1.1 0-.8-.6-1.1-1.7-1.5l-.6-.3c-1.8-.7-2.9-1.6-2.9-3.5 0-1.7 1.3-3 3.4-3 1.5 0 2.5.5 3.3 1.9l-1.8 1.2c-.4-.7-.8-1-1.5-1-.7 0-1.1.4-1.1 1 0 .7.4 1 1.4 1.4l.6.3c2.1.9 3.2 1.8 3.2 3.7 0 2.1-1.6 3.2-3.8 3.2-2.1 0-3.5-1-4.2-2.3z" fill="#000"/></svg>
+            </div>
+            <h3>JavaScript</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:1.2s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C9 2 9.2 3.3 9.2 3.3v1.9h2.9v.4H8c-1.6 0-2.6 1-2.6 3v2.3c0 1.9 1 3 2.6 3h1.5v-2c0-1.9 1.6-3.5 3.5-3.5h3c1.4 0 2.5-1.1 2.5-2.5V5.5C18.5 4 17.4 2 15.9 2H12z" fill="#3776AB"/><path d="M12 22c3 0 2.8-1.3 2.8-1.3v-1.9h-2.9v-.4H16c1.6 0 2.6-1 2.6-3v-2.3c0-1.9-1-3-2.6-3h-1.5v2c0 1.9-1.6 3.5-3.5 3.5H8c-1.4 0-2.5 1.1-2.5 2.5v2.4c0 1.5 1.1 3.5 2.6 3.5H12z" fill="#FFD43B"/></svg>
+            </div>
+            <h3>Python</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="85"></div></div>
+            <span class="skill-pct">85%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:0.2s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 1.5l8.5 4.9v11.2L12 22.5l-8.5-4.9V6.4L12 1.5z" fill="#539E43"/><path d="M12 6.2c-2.3 3.1-4 4.8-4 7.3 0 1.9 1.4 3.5 4 5.8 2.6-2.3 4-3.9 4-5.8 0-2.5-1.7-4.2-4-7.3z" fill="#fff"/></svg>
+            </div>
+            <h3>Node.js</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="88"></div></div>
+            <span class="skill-pct">88%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:0.6s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.2" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1" fill="none"><ellipse rx="10" ry="4.2" cx="12" cy="12"/><ellipse rx="10" ry="4.2" cx="12" cy="12" transform="rotate(60 12 12)"/><ellipse rx="10" ry="4.2" cx="12" cy="12" transform="rotate(120 12 12)"/></g></svg>
+            </div>
+            <h3>React</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="90"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:1s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 4.6c-3 0-4.8 1.5-5.5 4.4 1.1-1.5 2.4-2 3.9-1.7.85.2 1.45.8 2.12 1.5.9.9 1.9 1.9 4 1.9 3 0 4.8-1.5 5.5-4.4-1.1 1.5-2.4 2-3.9 1.7-.85-.2-1.45-.8-2.1-1.5-.9-.9-1.9-1.9-4.02-1.9zm-5.5 6.6c-3 0-4.8 1.5-5.5 4.4 1.1-1.5 2.4-2 3.9-1.7.85.2 1.45.8 2.12 1.5.9.9 1.9 1.9 4 1.9 3 0 4.8-1.5 5.5-4.4-1.1 1.5-2.4 2-3.9 1.7-.85-.2-1.45-.8-2.1-1.5-.9-.9-1.9-1.9-4.02-1.9z" fill="#38BDF8"/></svg>
+            </div>
+            <h3>Tailwind CSS</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="93"></div></div>
+            <span class="skill-pct">93%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:1.4s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C9 5 5 9 5 14a7 7 0 0014 0c0-5-4-9-7-12z" fill="#47A248"/><path d="M12 6.5c-1.7 2.1-3.5 4.4-3.5 7.2a3.5 3.5 0 007 0c0-2.8-1.8-5.1-3.5-7.2z" fill="#fff"/></svg>
+            </div>
+            <h3>MongoDB</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="82"></div></div>
+            <span class="skill-pct">82%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:0.3s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M21.7 11.4L12.6 2.3a1 1 0 00-1.4 0L9.3 4.2l2.4 2.4a1.2 1.2 0 011.5 1.5l2.3 2.3a1.2 1.2 0 11-.7.7L12.5 8.8v6c.3.1.5.3.7.5a1.2 1.2 0 11-1.9 0c.2-.2.4-.4.7-.5v-6c-.3-.1-.5-.3-.7-.5a1.2 1.2 0 01-.6-1.6L8.3 4.3l-6 6a1 1 0 000 1.4l9.1 9.1a1 1 0 001.4 0l9-9a1 1 0 00-.1-1.4z" fill="#F05032"/></svg>
+            </div>
+            <h3>Git</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="94"></div></div>
+            <span class="skill-pct">94%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:0.7s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8 2h4v6H8a3 3 0 110-6z" fill="#F24E1E"/><path d="M12 2h4a3 3 0 110 6h-4z" fill="#FF7262"/><path d="M12 8h4a3 3 0 110 6h-4z" fill="#A259FF"/><path d="M8 14h4v6a3 3 0 11-4-6z" fill="#1ABCFE"/><path d="M8 8a3 3 0 106 0 3 3 0 10-6 0z" fill="#0ACF83"/></svg>
+            </div>
+            <h3>Figma</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="80"></div></div>
+            <span class="skill-pct">80%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:1.1s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" fill="#00D1FF"/><rect x="13" y="3" width="8" height="8" rx="1.5" fill="#8A5CF5" opacity="0.85"/><rect x="3" y="13" width="8" height="8" rx="1.5" fill="#8A5CF5" opacity="0.6"/><rect x="13" y="13" width="8" height="8" rx="1.5" fill="#00D1FF" opacity="0.4"/></svg>
+            </div>
+            <h3>UI/UX Design</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="88"></div></div>
+            <span class="skill-pct">88%</span>
+          </div>
+
+          <div class="skill-card reveal-up" style="--float-delay:0.5s">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8.5 2.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 11.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm7-11.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" fill="#8A5CF5"/><path d="M12 9.5v5" stroke="#00D1FF" stroke-width="1.6"/></svg>
+            </div>
+            <h3>APIs</h3>
+            <div class="skill-bar"><div class="skill-bar-fill" data-level="91"></div></div>
+            <span class="skill-pct">91%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section id="services" class="section">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal-up">What I Offer</p>
+        <h2 class="section-title reveal-up">Services built around your goals</h2>
+
+        <div class="services-grid">
+          <div class="service-card reveal-up">
+            <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5h18v13H3z"/><path d="M3 8h18"/><circle cx="6" cy="6.5" r="0.4" fill="currentColor"/></svg></div>
+            <h3>Web Development</h3>
+            <p>Fast, scalable websites and web apps built with modern frameworks and clean architecture.</p>
+          </div>
+
+          <div class="service-card reveal-up">
+            <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+            <h3>UI/UX Design</h3>
+            <p>Interfaces designed around user behavior — wireframes, prototypes, and polished visuals.</p>
+          </div>
+
+          <div class="service-card reveal-up">
+            <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+            <h3>Mobile Design</h3>
+            <p>Native-feeling mobile experiences optimized for touch, performance, and platform conventions.</p>
+          </div>
+
+          <div class="service-card reveal-up">
+            <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h16M4 18h16" /><circle cx="18" cy="6" r="1.4" fill="currentColor"/><circle cx="6" cy="12" r="1.4" fill="currentColor"/><circle cx="18" cy="18" r="1.4" fill="currentColor"/></svg></div>
+            <h3>Backend Development</h3>
+            <p>Reliable server-side systems — databases, authentication, and business logic that scale.</p>
+          </div>
+
+          <div class="service-card reveal-up">
+            <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></div>
+            <h3>API Integration</h3>
+            <p>Seamless third-party integrations and custom APIs that connect your tools together.</p>
+          </div>
+
+          <div class="service-card reveal-up">
+            <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <h3>Graphic Design</h3>
+            <p>Brand-aligned visuals — from icon sets to marketing graphics that stay on-message.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal-up">Get In Touch</p>
+        <h2 class="section-title reveal-up">Let's build something great</h2>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal-up">
+            <p class="contact-lede">
+              Have a project in mind or just want to say hello? My inbox is open — I usually reply within a day.
+            </p>
+
+            <div class="contact-detail">
+              <span class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 6l9 6 9-6M3 6h18v12H3z"/></svg>
+              </span>
+              <div>
+                <span class="contact-detail-label">Email</span>
+                <a href="mailto:Sanisonic31@gmail.com">Sanisonic31@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+              </span>
+              <div>
+                <span class="contact-detail-label">Phone</span>
+                <a href="tel:09064780587">09064780587</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <span class="contact-detail-label">Location</span>
+                <span>No.48 Eleshin Street Obalinde Ikoyi Lagos</span>
+              </div>
+            </div>
+
+            <div class="social-icons">
+              <a href="#" aria-label="GitHub" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.15c-3.19.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a>
+              <a href="#" aria-label="LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8.34 18.34H5.67V9.75h2.67zM7 8.6a1.55 1.55 0 110-3.1 1.55 1.55 0 010 3.1zm11.34 9.74h-2.67v-4.16c0-1-.36-1.68-1.25-1.68-.68 0-1.09.46-1.27.9-.06.16-.08.38-.08.6v4.34h-2.67s.04-7.9 0-8.72h2.67v1.24a2.66 2.66 0 012.4-1.33c1.76 0 3.07 1.14 3.07 3.6z"/></svg></a>
+              <a href="#" aria-label="Twitter / X" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.53 3h3.2l-7 8 7.8 10h-6.1l-4.78-6.24L5.1 21H1.9l7.5-8.56L2 3h6.24l4.32 5.72zM8.6 5H6.2l9.2 12h2.3z"/></svg></a>
+              <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .24 2.4.4a4.9 4.9 0 011.8 1.16 4.9 4.9 0 011.16 1.8c.17.4.35 1.2.4 2.4.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.24 2-.4 2.4a4.9 4.9 0 01-1.16 1.8 4.9 4.9 0 01-1.8 1.16c-.4.17-1.2.35-2.4.4-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.24-2.4-.4a4.9 4.9 0 01-1.8-1.16 4.9 4.9 0 01-1.16-1.8c-.17-.4-.35-1.2-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.24-2 .4-2.4a4.9 4.9 0 011.16-1.8 4.9 4.9 0 011.8-1.16c.4-.17 1.2-.35 2.4-.4C9.4 2.2 9.8 2.2 12 2.2zm0 3a6.8 6.8 0 100 13.6 6.8 6.8 0 000-13.6zm0 2a4.8 4.8 0 110 9.6 4.8 4.8 0 010-9.6zm6.9-3.7a1.15 1.15 0 100 2.3 1.15 1.15 0 000-2.3z"/></svg></a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal-up" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <input type="text" id="name" name="name" required placeholder=" " autocomplete="name">
+                <label for="name">Your Name</label>
+              </div>
+              <div class="form-field">
+                <input type="email" id="email" name="email" required placeholder=" " autocomplete="email">
+                <label for="email">Your Email</label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <input type="text" id="subject" name="subject" required placeholder=" ">
+              <label for="subject">Subject</label>
+            </div>
+
+            <div class="form-field">
+              <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+              <label for="message">Your Message</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block ripple" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-divider"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">A<span class="logo-accent">R</span></span>
+        <p>Building thoughtful software, one project at a time.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="GitHub" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2.15c-3.19.7-3.87-1.36-3.87-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a>
+          <a href="#" aria-label="LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8.34 18.34H5.67V9.75h2.67zM7 8.6a1.55 1.55 0 110-3.1 1.55 1.55 0 010 3.1zm11.34 9.74h-2.67v-4.16c0-1-.36-1.68-1.25-1.68-.68 0-1.09.46-1.27.9-.06.16-.08.38-.08.6v4.34h-2.67s.04-7.9 0-8.72h2.67v1.24a2.66 2.66 0 012.4-1.33c1.76 0 3.07 1.14 3.07 3.6z"/></svg></a>
+          <a href="#" aria-label="Twitter / X" class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.53 3h3.2l-7 8 7.8 10h-6.1l-4.78-6.24L5.1 21H1.9l7.5-8.56L2 3h6.24l4.32 5.72zM8.6 5H6.2l9.2 12h2.3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Alex Rivera. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
